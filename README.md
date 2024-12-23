@@ -1,1 +1,1 @@
-### test html metadata injection through express.js
+### A test for html metadata injection through express.js
