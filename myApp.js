@@ -6,8 +6,6 @@ var app = express();
 
 process.env.MESSAGE_STYLE = 'uppercase';
 
-// console.log("Hello World");
-
 app.use("/public", express.static(__dirname + "/public", { etag: false, maxAge: 0 }));
 ``
 
@@ -56,15 +54,15 @@ app.get("/now", function(req, res, next) {
   let html = htmlContent
 
   const testFnc = async () => {
-    console.log('testtest')
-    const url = "https://payment.chapter-i.com/campaign?uid=Web%20Store"
-    const response = await fetch(url, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      mode: "cors", // no-cors, *cors, same-origin
-    });
-    const cmapaignRes = await response.json();
-    const desc = cmapaignRes.campaignDescription
-    const icon = cmapaignRes.logoImage
+    // this won't work becuase the link to fetch is confidentialed therefore i changed it
+    // const url = "https://example.com"
+    // const response = await fetch(url, {
+    //   method: "GET",
+    //   mode: "cors",
+    // });
+    // const res = await response.json();
+    const desc = 'some description'
+    const icon = 'https://img.freepik.com/free-vector/simple-vibing-cat-square-meme_742173-4493.jpg'
     console.log({desc, icon})
     html = html.replace("__TITLE__", desc);
     html = html.replace("__DESCRIPTION__", desc);
